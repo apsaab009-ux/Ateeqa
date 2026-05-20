@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor Gallery</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background:rgb(238, 110, 110);
+}
+
+h1 {
+  margin: 20px;
+  color:maroon;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  color:maroon;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 30px;
+  background: rgba(0,0,0,0.8); 
+
+}
+
+.lightbox-content {
+  
+
+  width: 200px;
+  height:100px;
+  color:maroon;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+
+  <h1>Kuwait Tailor Gallery</h1>
+
+  <div class="gallery">
+    <img src="a (47).jpg" alt="Suit Design">
+    <img src="a (51).jpg" alt="Dress Design">
+    <img src="a (57).jpg" alt="Coat Design">
+    <img src="a (33).jpg" alt="Shirt Design">
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+<button onclick="filterGallery('men')">Men</button>
+<button onclick="filterGallery('women')">Women</button>
+<div class="item">
+  <img src="a (37).jpg" height="500px" width="600px">
+   <img src="a (43).jpg" height="500px" width="600px">
+  <p >Classic Suit</p>
+</div>
+<a href="tailor.html">Go to main page</a>
+  <script>
+const images = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.close');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'block';
+    lightboxImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.style.display = 'none';
+  }
+});
+  </script>
+</body>
+</html>

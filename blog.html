@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kuwait Tailor Blog</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: lightcoral;
+}
+
+/* Header */
+header {
+      background: linear-gradient(135deg, maroon, #e93333, #ed5252);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+/* Hero */
+.hero {
+    background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47') center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: maroon;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Blog Section */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px;
+    gap: 20px;
+}
+
+.blog-card {
+    background: maroon;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 15px;
+}
+
+.read-more {
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: maroon;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kuwait Tailor</h1>
+    
+</header>
+
+<div class="hero">
+    Elegant Stitching & Modern Fashion
+</div>
+
+<section class="blog-container">
+
+    <div class="blog-card">
+        <img src="images (40).jpg">
+        <div class="blog-content">
+            <h3>Latest Men's Suit Trends</h3>
+            <p class="short-text">Discover modern suit designs perfect for every occasion.</p>
+            <p class="full-text" style="display:none;">We provide custom stitching with premium fabrics to give you a royal look. Perfect for weddings and formal events.</p>
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+        </div>
+    </div>
+
+    <div class="blog-card">
+        <img src="images (41).jpg">
+        <div class="blog-content">
+            <h3>Bridal Wear Collection</h3>
+            <p class="short-text">Elegant bridal dresses stitched with perfection.</p>
+            <p class="full-text" style="display:none;">Our bridal collection includes hand embroidery, luxury fabrics, and custom fittings for your special day.</p>
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Kuwait Tailor | All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleText(element) {
+    let card = element.parentElement;
+    let shortText = card.querySelector(".short-text");
+    let fullText = card.querySelector(".full-text");
+
+    if (fullText.style.display === "none") {
+        fullText.style.display = "block";
+        shortText.style.display = "none";
+        element.innerText = "Read Less";
+    } else {
+        fullText.style.display = "none";
+        shortText.style.display = "block";
+        element.innerText = "Read More";
+    }
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

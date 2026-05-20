@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuwait Tailor - Fashion Trends</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    
+      background: linear-gradient(135deg, maroon, #e93333, #ed5252);
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1521336575822-6da63fb45455');
+    background-size: cover;
+    color: maroon;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.filters button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: white;
+    color: maroon;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background: #c59d5f;
+}
+
+/* CARDS */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 280px;
+    margin: 15px;
+    background: lightsalmon;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 10px;
+    color:maroon;
+}
+
+.card p {
+    padding: 0 10px 10px;
+    color:white;
+}
+
+/* HIDDEN */
+.hide {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Kuwait Tailor</h1>
+    <p>Latest Fashion Trends 2026</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+    <button onclick="filterSelection('all')">All</button>
+    <button onclick="filterSelection('men')">Men</button>
+    <button onclick="filterSelection('women')">Women</button>
+    <button onclick="filterSelection('formal')">Formal</button>
+    <button onclick="filterSelection('casual')">Casual</button>
+</div>
+
+<!-- CARDS -->
+<div class="container">
+
+    <div class="card men formal">
+        <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7">
+        <h3>Classic Suit</h3>
+        <p>Elegant formal tailoring for men.</p>
+    </div>
+
+    <div class="card women casual">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+        <h3>Casual Wear</h3>
+        <p>Comfort meets modern design.</p>
+    </div>
+
+    <div class="card men casual">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+        <h3>Street Style</h3>
+        <p>Trendy everyday outfits.</p>
+    </div>
+
+    <div class="card women formal">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
+        <h3>Evening Dress</h3>
+        <p>Luxury and elegance combined.</p>
+    </div>
+
+</div>
+
+<script>
+function filterSelection(category) {
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.add("hide");
+
+        if (category === "all" || cards[i].classList.contains(category)) {
+            cards[i].classList.remove("hide");
+        }
+    }
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

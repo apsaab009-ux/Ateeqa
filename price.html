@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuwait Tailor - Pricing</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #d84d4d;
+}
+
+/* Header */
+header {
+    background: maroon;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 50px 20px;
+    text-align: center;
+    color:maroon;
+}
+
+.pricing h2 {
+    margin-bottom: 30px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    background: maroon;
+    padding: 25px;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 5px 15px white;
+    transition: 0.3s;
+    color:white;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Highlight */
+.card.popular {
+    border: 2px solid #d4af37;
+}
+
+/* Price */
+.price {
+    font-size: 28px;
+    color: #d4af37;
+    margin: 15px 0;
+}
+
+/* List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 0;
+}
+
+/* Button */
+button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d4af37;
+}
+
+/* Toggle Buttons */
+.toggle {
+    margin-bottom: 20px;
+}
+
+.toggle button {
+    margin: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kuwait Tailor</h1>
+    <p>Premium Stitching Services</p>
+</header>
+
+<section class="pricing">
+
+    <h2>Our Pricing</h2>
+
+    <!-- Toggle -->
+    <div class="toggle">
+        <button onclick="showCategory('men')">Men</button>
+        <button onclick="showCategory('women')">Women</button>
+    </div>
+
+    <!-- MEN -->
+    <div class="cards" id="men">
+
+        <div class="card">
+            <h3>Basic Suit</h3>
+            <p class="price">Rs. 2500</p>
+            <ul>
+                <li>Simple Design</li>
+                <li>Standard Stitch</li>
+                <li>Delivery 5 Days</li>
+            </ul>
+            <button onclick="orderNow('Basic Suit')">Order</button>
+        </div>
+
+        <div class="card popular">
+            <h3>Premium Suit</h3>
+            <p class="price">Rs. 4500</p>
+            <ul>
+                <li>Custom Design</li>
+                <li>Perfect Fitting</li>
+                <li>Delivery 3 Days</li>
+            </ul>
+            <button onclick="orderNow('Premium Suit')">Order</button>
+        </div>
+
+    </div>
+
+    <!-- WOMEN -->
+    <div class="cards" id="women" style="display:none;">
+
+        <div class="card">
+            <h3>Basic Dress</h3>
+            <p class="price">Rs. 3000</p>
+            <ul>
+                <li>Simple Stitch</li>
+                <li>Normal Design</li>
+                <li>5 Days Delivery</li>
+            </ul>
+            <button onclick="orderNow('Basic Dress')">Order</button>
+        </div>
+
+        <div class="card popular">
+            <h3>Designer Dress</h3>
+            <p class="price">Rs. 6000</p>
+            <ul>
+                <li>Fancy Design</li>
+                <li>High Quality Finish</li>
+                <li>3 Days Delivery</li>
+            </ul>
+            <button onclick="orderNow('Designer Dress')">Order</button>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+function showCategory(category) {
+    document.getElementById('men').style.display = 'none';
+    document.getElementById('women').style.display = 'none';
+
+    document.getElementById(category).style.display = 'flex';
+}
+
+function orderNow(item) {
+    alert("You selected: " + item + "\nWe will contact you soon!");
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

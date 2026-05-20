@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background:lightcoral;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+    background:  maroon;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  margin: 0 10px;
+  color: gold;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  height: 30vh;
+  background: linear-gradient(to right, rgb(203, 25, 25), #333);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h2 {
+  font-size: 3em;
+}
+
+.hero button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: white;
+}
+
+/* Services */
+#services {
+  padding: 50px;
+  text-align: center;
+   color:white;
+
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  padding: 30px;
+  background:maroon;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  
+}
+
+.gallery img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* Contact */
+#contact {
+  text-align: center;
+  padding: 40px;
+  color:maroon;
+}
+button{color:maroon;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Kuwait Tailor</h1>
+</header>
+
+<section id="home" class="hero">
+  <h2>Premium Stitching in Kuwait</h2>
+  <p>Elegance in Every Stitch</p>
+  <button onclick="scrollToSection()">Explore</button>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">Men's Suits</div>
+    <div class="card">Traditional Wear</div>
+    <div class="card">Custom Stitching</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="images (7).jpg">
+    <img src="images.jpg">
+    <img src="a (21).jpg">
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📞 +923037710409</p>
+  <p>📍 Sangla Hill</p>
+</section>
+
+<script>
+function scrollToSection() {
+  document.getElementById("services").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

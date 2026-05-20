@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor - Testimonials</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background:maroon;
+}
+
+.testimonials {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #111, #444);
+  color: white;
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.slider {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+}
+
+.card {
+  display: none;
+  background: maroon;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px white;
+  animation: fade 0.5s ease-in-out;
+}
+
+.card.active {
+  display: block;
+}
+
+.card p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.stars {
+  color: gold;
+  font-size: 18px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  background: gold;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buttons button:hover {
+  background: orange;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+  </style>
+</head>
+<body>
+
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+
+  <div class="slider">
+
+    <div class="card active">
+      <p>"Amazing stitching and perfect fitting. Highly recommended!"</p>
+      <h3>Barnad Patras</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="card">
+      <p>"Best tailor in town. Delivery was on time and quality is top-notch."</p>
+      <h3>Shaheer butt</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="card">
+      <p>"Very professional service and great fabric suggestions."</p>
+      <h3>Usman Riaz</h3>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+  </div>
+
+  <div class="buttons">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+
+</section>
+
+<script>
+    let index = 0;
+let cards = document.querySelectorAll(".card");
+
+function showSlide(i) {
+  cards.forEach(card => card.classList.remove("active"));
+  cards[i].classList.add("active");
+}
+
+function nextSlide() {
+  index = (index + 1) % cards.length;
+  showSlide(index);
+}
+
+function prevSlide() {
+  index = (index - 1 + cards.length) % cards.length;
+  showSlide(index);
+}
+
+// Auto Slide
+setInterval(nextSlide, 4000);
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

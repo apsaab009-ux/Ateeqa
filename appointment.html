@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuwait Tailor - Book Appointment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: maroon;
+            margin: 0;
+        }
+
+        header {
+            background: rgb(227, 106, 106);
+            color: maroon;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            background: rgb(239, 66, 66);
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px white;
+            color:maroon;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            background: rgb(245, 85, 85);
+            color: rgb(68, 5, 5);
+            padding: 12px;
+            border: none;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: maroon;
+        }
+
+        .success {
+            display: none;
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            background: rgb(241, 95, 95);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kuwait Tailor</h1>
+    <p>Book Your Appointment Easily</p>
+</header>
+
+<div class="container">
+    <h2>Appointment Form</h2>
+
+    <form id="appointmentForm">
+        
+        <label>Full Name</label>
+        <input type="text" id="name">
+        <div class="error" id="nameError">Enter your name</div>
+
+        <label>Phone Number</label>
+        <input type="text" id="phone">
+        <div class="error" id="phoneError">Enter valid phone number</div>
+
+        <label>Select Service</label>
+        <select id="service">
+            <option value="">-- Choose Service --</option>
+            <option>Suit Stitching</option>
+            <option>Shalwar Kameez</option>
+            <option>Alteration</option>
+            <option>Custom Design</option>
+        </select>
+        <div class="error" id="serviceError">Select a service</div>
+
+        <label>Select Date</label>
+        <input type="date" id="date">
+        <div class="error" id="dateError">Select a date</div>
+
+        <label>Select Time</label>
+        <input type="time" id="time">
+        <div class="error" id="timeError">Select a time</div>
+
+        <button type="submit">Book Appointment</button>
+
+        <div class="success" id="successMsg">
+            ✅ Appointment Booked Successfully!
+        </div>
+
+    </form>
+</div>
+
+<footer>
+    © 2026 Kuwait Tailor | All Rights Reserved
+</footer>
+
+<script>
+    const form = document.getElementById("appointmentForm");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let valid = true;
+
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const service = document.getElementById("service").value;
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+
+        // Reset errors
+        document.querySelectorAll(".error").forEach(el => el.style.display = "none");
+
+        if (name === "") {
+            document.getElementById("nameError").style.display = "block";
+            valid = false;
+        }
+
+        if (phone.length < 10) {
+            document.getElementById("phoneError").style.display = "block";
+            valid = false;
+        }
+
+        if (service === "") {
+            document.getElementById("serviceError").style.display = "block";
+            valid = false;
+        }
+
+        if (date === "") {
+            document.getElementById("dateError").style.display = "block";
+            valid = false;
+        }
+
+        if (time === "") {
+            document.getElementById("timeError").style.display = "block";
+            valid = false;
+        }
+
+        if (valid) {
+            document.getElementById("successMsg").style.display = "block";
+            form.reset();
+        }
+    });
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

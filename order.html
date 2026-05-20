@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kuwait Tailor - Order Tracking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: rgb(140, 10, 10);
+    
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 80px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+/* Input */
+input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+/* Button */
+button {
+    padding: 12px 20px;
+    border: none;
+    background: #0c7c9b;
+    color: rgb(55, 5, 5);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Status Box */
+.status-box {
+    margin-top: 25px;
+    display: none;
+}
+
+/* Progress Bar */
+.progress {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.step {
+    width: 25%;
+    position: relative;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    background: gray;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.active .circle {
+    background: #00ffcc;
+}
+
+.label {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Line */
+.step::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: gray;
+    z-index: -1;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.active::after {
+    background: #00ffcc;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🧵 Kuwait Tailor</h2>
+    <p>Track Your Order</p>
+
+    <input type="text" id="orderId" placeholder="Enter Order ID">
+    <br>
+    <button onclick="trackOrder()">Track Order</button>
+
+    <div class="status-box" id="statusBox">
+        <h3 id="orderText"></h3>
+
+        <div class="progress">
+            <div class="step" id="step1">
+                <div class="circle"></div>
+                <div class="label">Received</div>
+            </div>
+            <div class="step" id="step2">
+                <div class="circle"></div>
+                <div class="label">Stitching</div>
+            </div>
+            <div class="step" id="step3">
+                <div class="circle"></div>
+                <div class="label">Ready</div>
+            </div>
+            <div class="step" id="step4">
+                <div class="circle"></div>
+                <div class="label">Delivered</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const orders = {
+    "123": 1,
+    "456": 2,
+    "789": 3,
+    "999": 4
+};
+
+function trackOrder() {
+    let id = document.getElementById("orderId").value;
+    let status = orders[id];
+
+    document.getElementById("statusBox").style.display = "block";
+    document.getElementById("orderText").innerText = "Order ID: " + id;
+
+    // Reset steps
+    for(let i=1; i<=4; i++) {
+        document.getElementById("step"+i).classList.remove("active");
+    }
+
+    if(status) {
+        for(let i=1; i<=status; i++) {
+            document.getElementById("step"+i).classList.add("active");
+        }
+    } else {
+        alert("Order not found!");
+    }
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

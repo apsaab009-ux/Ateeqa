@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor - Custom Stitching</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: maroon;
+  color:maroon;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  background: rgb(243, 82, 82);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0; 
+  border-color: maroon;
+  border-radius: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: maroon;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #34495e;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Custom Stitching Order</h1>
+
+    <form id="stitchForm">
+
+      <!-- Customer Info -->
+      <h2>Customer Details</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+
+      <!-- Garment Type -->
+      <h2>Select Garment</h2>
+      <select id="garment">
+        <option value="shalwar">Shalwar Kameez</option>
+        <option value="kurta">Kurta</option>
+        <option value="waistcoat">Waistcoat</option>
+      </select>
+
+      <!-- Fabric -->
+      <h2>Fabric Type</h2>
+      <select id="fabric">
+        <option value="cotton">Cotton</option>
+        <option value="linen">Linen</option>
+        <option value="washwear">Wash & Wear</option>
+      </select>
+
+      <!-- Measurements -->
+      <h2>Measurements (in inches)</h2>
+      <input type="number" placeholder="Chest">
+      <input type="number" placeholder="Shoulder">
+      <input type="number" placeholder="Sleeve Length">
+      <input type="number" placeholder="Shirt Length">
+
+      <!-- Style Options -->
+      <h2>Style Options</h2>
+      <label>
+        <input type="checkbox" value="collar"> Collar
+      </label>
+      <label>
+        <input type="checkbox" value="cuff"> Cuffs
+      </label>
+      <label>
+        <input type="checkbox" value="pocket"> Pocket
+      </label>
+
+      <button type="submit">Submit Order</button>
+
+    </form>
+  </div>
+     
+  <input type="file" accept="image/*">
+   
+  <script> 
+    document.getElementById("stitchForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  alert("Your custom stitching order has been submitted!");
+
+  // You can later send data to backend here
+});
+let fabricPrices = {
+  cotton: 2000,
+  linen: 3000,
+  washwear: 2500
+};
+let message = "New Order: Shalwar Kameez";
+window.open("https://wa.me/your-number?text=" + encodeURIComponent(message));
+  </script>
+</body>
+</html>

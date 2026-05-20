@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kuwait Tailors - Fabric Guide</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: lightcoral;
+    }
+
+    header {
+        background: maroon;
+        color: white;
+        padding: 40px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 40px;
+    }
+
+    header p {
+        margin-top: 10px;
+        color: #ccc;
+    }
+
+    .filters {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .filters button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        background: #1e2a38;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .filters button:hover {
+        background: #ff9800;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .card-content h3 {
+        margin: 0;
+    }
+
+    .card-content p {
+        color: #555;
+        font-size: 14px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: maroon;
+        color: white;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kuwait Tailors</h1>
+    <p>Fabric Guide - Choose the Best Fabric for Your Style</p>
+</header>
+
+<div class="filters">
+    <button onclick="filterSelection('all')">All</button>
+    <button onclick="filterSelection('cotton')">Cotton</button>
+    <button onclick="filterSelection('linen')">Linen</button>
+    <button onclick="filterSelection('wool')">Wool</button>
+    <button onclick="filterSelection('silk')">Silk</button>
+</div>
+
+<div class="container">
+
+    <div class="card cotton">
+        <img src="images (32).jpg" alt="">
+        <div class="card-content">
+            <h3>Cotton</h3>
+            <p>Soft, breathable, and perfect for daily wear in warm climates.</p>
+        </div>
+    </div>
+
+    <div class="card linen">
+        <img src="images (35).jpg" alt="">
+        <div class="card-content">
+            <h3>Linen</h3>
+            <p>Lightweight fabric, ideal for summer and formal casual wear.</p>
+        </div>
+    </div>
+
+    <div class="card wool">
+        <img src="images (29).jpg" alt="">
+        <div class="card-content">
+            <h3>Wool</h3>
+            <p>Warm and durable, best for winter suits and formal wear.</p>
+        </div>
+    </div>
+
+    <div class="card silk">
+        <img src="images (37).jpg" alt="">
+        <div class="card-content">
+            <h3>Silk</h3>
+            <p>Luxury fabric with smooth texture, ideal for special occasions.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Kuwait Tailors | Designed with ❤️</p>
+</footer>
+
+<script>
+function filterSelection(category) {
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = "none";
+
+        if (category === "all" || cards[i].classList.contains(category)) {
+            cards[i].style.display = "block";
+        }
+    }
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

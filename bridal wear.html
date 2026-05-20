@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuwait Tailor - Bridal Wear</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: maroon;
+}
+
+/* Navbar */
+nav {
+    background: #8b0000;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: url('a (15).jpg') no-repeat center/cover;
+    height: 90vh;
+    color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 50px;
+}
+.hero button {
+    padding: 12px 25px;
+    background: rgb(238, 77, 77);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Section */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+.section h2 {
+    color: #8b0000;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    background: white;
+    margin: 15px;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.card img {
+    width: 100%;
+}
+.card button {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+/* Contact */
+.contact input, .contact textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+.contact button {
+    background: pink;
+    border: none;
+    padding: 10px 20px;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Kuwait Tailor Bridal Wear</h1>
+        <p>Elegant Designs for Your Special Day</p>
+        <button onclick="scrollToSection()">Explore Collection</button>
+    </div>
+</section>
+
+<section class="section" id="collection">
+    <h2>Bridal Collection</h2>
+    <div class="gallery">
+        <div class="card">
+            <img src="download (10).jpg">
+            <h3>Red Bridal Lehenga</h3>
+            <p>PKR 120,000</p>
+            <button onclick="orderNow('Red Lehenga')">Order Now</button>
+        </div>
+
+        <div class="card">
+            <img src="download (11).jpg">
+            <h3>Golden Bridal Dress</h3>
+            <p>PKR 150,000</p>
+            <button onclick="orderNow('Golden Dress')">Order Now</button>
+        </div>
+
+        <div class="card">
+            <img src="download (9).jpg">
+            <h3>plum Wedding Lehenga</h3>
+            <p>PKR 180,000</p>
+            <button onclick="orderNow('White Gown')">Order Now</button>
+        </div>
+    </div>
+</section>
+
+<section class="section contact" id="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+    <button onclick="submitForm()">Send Message</button>
+</section>
+
+<footer>
+    <p>© 2024 Kuwait Tailor | Bridal Wear Experts</p>
+</footer>
+
+<script>
+function scrollToSection() {
+    document.getElementById("collection").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function orderNow(item) {
+    alert("You selected: " + item + "\nOur team will contact you soon!");
+}
+
+function submitForm() {
+    alert("Thank you! Your message has been sent.");
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

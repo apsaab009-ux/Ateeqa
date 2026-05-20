@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor Services</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background:pink;
+}
+
+header {
+  background: maroon;
+  color: rgb(240, 95, 95);;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 40px; margin-left: 100px;
+  gap: 10px; 
+}
+
+.card {
+  background: rgb(240, 95, 95);
+  color:maroon;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  border-color: maroon;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kuwait Tailor  <img src="pic.jpg" height="100px" width="400px"</h1>
+    <h2>Our Premium Services</h2>
+  </header>
+
+  <section class="services">
+
+    <div class="card">
+      <h2>Custom Stitching</h2>
+      <p>Perfect fit tailored to your body.</p>
+      <img src="a (20).jpg" height="200px" width="200px">
+    </div>
+
+    <div class="card">
+      <h2>Dishdasha Tailoring</h2>
+      <p>Traditional Kuwaiti wear with modern style.</p>
+<img src="images (11).jpg" height="200px" width="200px">
+    </div><br><br>
+
+    <div class="card">
+      <h2>Alterations</h2>
+      <p>Resize and repair your garments.</p>
+      <img src="a (10).jpg" height="200px" width="200px">
+    </div>
+
+    <div class="card">
+      <h2>Home Service</h2>
+      <p>We visit your home for measurements.</p>
+      <img src="a(22).jpg" height="200px" width="200px">
+    </div>
+
+  </section>
+
+  <script >
+    const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    alert("Service selected!");
+  });
+});
+  </script>
+   <a href="tailor.html">Go to main page</a>
+</body>
+</html

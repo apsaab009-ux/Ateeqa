@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kuwait Tailor - Home Services</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background:  rgb(236, 88, 88);
+}
+
+header {
+    background: maroon;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.services {
+    padding: 20px;
+    text-align: center;
+    color:white;
+}
+
+.service-card {
+    background: maroon;
+    margin: 10px;
+    padding: 15px;
+    display: inline-block;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px white;
+    color:white;
+}
+
+.booking {
+    background: maroon;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+input, button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border-color:  rgb(236, 88, 88);
+    border-radius: 10px;
+}
+
+button {
+    background: rgb(236, 88, 88) ;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #219150;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kuwait Tailor</h1>
+    <p>Professional Tailoring at Your Doorstep</p>
+</header>
+
+<section class="services">
+    <h2>Our Home Services</h2>
+    <div class="service-card">
+        <h3>Measurement at Home</h3>
+        <p>We visit your home for accurate measurements.</p>
+    </div>
+    <div class="service-card">
+        <h3>Custom Stitching</h3>
+        <p>Personalized stitching with premium fabrics.</p>
+    </div>
+    <div class="service-card">
+        <h3>Alterations</h3>
+        <p>Quick and precise alterations at your convenience.</p>
+    </div>
+</section>
+
+<section class="booking">
+    <h2>Book a Service</h2>
+    <form id="bookingForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="text" id="address" placeholder="Your Address" required>
+        <input type="date" id="date" required>
+        <button type="submit">Book Now</button>
+    </form>
+</section>
+<a href="tailor.html">Go to main page</a>
+<script >
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const date = document.getElementById("date").value;
+
+    if(name && address && date) {
+        alert("Thank you " + name + "! Your booking is confirmed.");
+    } else {
+        alert("Please fill all fields.");
+    }
+});
+</script>
+</body>
+</html>

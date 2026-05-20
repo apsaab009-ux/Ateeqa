@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor - Alteration Page</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background:maroon;
+}
+
+.container {
+  width: 400px;
+  margin: 50px auto;
+  background: rgb(222, 105, 105);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px purple;
+}
+
+h1 {
+  text-align: center;
+  color:maroon;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color:maroon;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-color: maroon;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: maroon;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #34495e;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Clothing Alteration Service</h1>
+
+    <form id="alterationForm">
+      
+      <label>Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" id="phone" required>
+
+      <label>Select Service:</label>
+      <select id="service">
+        <option value="hemming">Hemming</option>
+        <option value="waist">Waist Adjustment</option>
+        <option value="length">Length Shortening</option>
+        <option value="repair">Repair</option>
+      </select>
+<label>Waist (inches):</label>
+<input type="number" id="waist">
+
+<label>Length (inches):</label>
+<input type="number" id="length">
+      <label>Additional Notes:</label>
+      <textarea id="notes"></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+
+    <p id="message"></p>
+</div>
+<a href="tailor.html">Go to main page</a>
+  <script>
+    document.getElementById("alterationForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let service = document.getElementById("service").value;
+
+  document.getElementById("message").innerText =
+    "Thank you " + name + "! Your " + service + " request has been submitted.";
+
+  this.reset();
+});
+  </script>
+</body>
+</html>

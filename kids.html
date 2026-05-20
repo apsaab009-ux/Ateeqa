@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuwait Tailor - Kids Tailoring</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: lightcoral;
+}
+
+/* Header */
+header {
+      background: linear-gradient(135deg, maroon, #e93333, #ed5252);
+    color: black;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images (20).jpg') no-repeat center/cover;
+    color: maroon;
+    text-align: center;
+    padding: 80px 20px;
+    height:700px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Services */
+.services {
+    padding: 40px;
+    text-align: center;
+}
+
+.service-box {
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    background: maroon;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Gallery */
+.gallery {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Pricing */
+.pricing {
+    padding: 40px;
+    background: maroon;
+    text-align: center;
+}
+
+.price-box {
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    background: lightcoral;
+    border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+    padding: 40px;
+    text-align: center;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    background: #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #084298;
+}
+
+/* Footer */
+footer {
+    background: #212529;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h2>Kuwait Tailor</h2>
+    <p>Kids Tailoring Specialist</p>
+</header>
+
+<section class="hero">
+    <h1>Perfect Tailoring for Kids</h1>
+    <p>Comfortable, Stylish & Custom-Fit Dresses</p>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+
+    <div class="service-box">
+        <h3>School Uniforms</h3>
+        <p>Perfect fitting uniforms for all schools.</p>
+    </div>
+
+    <div class="service-box">
+        <h3>Party Wear</h3>
+        <p>Stylish dresses for birthdays & events.</p>
+    </div>
+
+    <div class="service-box">
+        <h3>Casual Wear</h3>
+        <p>Comfortable everyday clothing for kids.</p>
+    </div>
+</section>
+
+<section class="gallery">
+    <h2>Our Work</h2>
+    <img src="images (18).jpg" alt="">
+    <img src="images (19).jpg" alt="">
+    <img src="images (23).jpg" alt="">
+</section>
+
+<section class="pricing">
+    <h2>Pricing</h2>
+
+    <div class="price-box">
+        <h3>Basic</h3>
+        <p>PKR 1500</p>
+    </div>
+
+    <div class="price-box">
+        <h3>Standard</h3>
+        <p>PKR 2500</p>
+    </div>
+
+    <div class="price-box">
+        <h3>Premium</h3>
+        <p>PKR 4000</p>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name"><br>
+        <input type="email" id="email" placeholder="Your Email"><br>
+        <textarea id="message" placeholder="Your Message"></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="error" style="color:red;"></p>
+</section>
+
+<footer>
+    <p>© 2026 Kuwait Tailor | Kids Tailoring</p>
+</footer>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let error = document.getElementById("error");
+
+    if (name === "" || email === "" || message === "") {
+        error.innerText = "Please fill all fields!";
+        return false;
+    }
+
+    error.innerText = "Message sent successfully!";
+    error.style.color = "green";
+    return false;
+}
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

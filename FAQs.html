@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuwait Tailor - FAQs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: lightcoral;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .faq-item {
+      background: maroon;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .faq-question {
+      padding: 18px;
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+      color: #34495e;
+    }
+
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '-';
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 18px;
+      color: white;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer p {
+      margin: 15px 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    /* Hover effect */
+    .faq-item:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+    }
+    button{color:white;
+    background-color: maroon;}
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Kuwait Tailor - FAQs</h1>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you offer home measurement services?</div>
+    <div class="faq-answer">
+      <p>Yes, we provide home measurement services across Kuwait for your convenience.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">How long does stitching take?</div>
+    <div class="faq-answer">
+      <p>Usually 3–7 working days depending on design complexity.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Can I customize my design?</div>
+    <div class="faq-answer">
+      <p>Absolutely! You can choose fabric, style, and fitting according to your preference.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Do you provide urgent orders?</div>
+    <div class="faq-answer">
+      <p>Yes, urgent stitching is available with additional charges.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">What payment methods do you accept?</div>
+    <div class="faq-answer">
+      <p>We accept cash, bank transfer, and online payments.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+  });
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tailor Contact</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 61, 61);
+    text-align: center;
+}
+
+.container {
+    background:maroon;
+    padding: 30px;
+    margin: 50px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    color:white;
+}
+
+.phone {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: rgb(234, 72, 72);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgb(95, 5, 5);
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kuwait Tailor</h1>
+
+    <p>Call us directly:</p>
+    <a href="tel:+923037710409" class="phone">+92 3037710409</a>
+
+    <h2>Request a Callback</h2>
+
+    <input type="text" id="phoneInput" placeholder="Enter your phone number">
+    <button onclick="submitNumber()">Submit</button>
+
+    <p id="message"></p>
+</div>
+
+<script >
+function submitNumber() {
+    let phone = document.getElementById("phoneInput").value;
+    let message = document.getElementById("message");
+
+    // Simple validation
+    if (phone === "") {
+        message.textContent = "Please enter your phone number.";
+        message.style.color = "red";
+        return;
+    }
+
+    if (!/^[0-9]{10,13}$/.test(phone)) {
+        message.textContent = "Enter a valid phone number.";
+        message.style.color = "red";
+        return;
+    }
+
+    message.textContent = "Thank you! We will call you soon.";
+    message.style.color = "green";
+}
+</script>
+<a href="tailor.html">Go to main page</a>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuwait Tailor - Stitching Tips</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: lightcoral;
+        color: maroon;
+    }
+
+    header {
+        background: linear-gradient(135deg, maroon, #e93333, #ed5252);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        opacity: 0.8;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 40px auto;
+    }
+
+    .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .tip-card {
+        background: linear-gradient( maroon,  #e93333);
+        color:white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 8px 20px white;
+        transition: 0.3s;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tip-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .tip-card h3 {
+        margin-top: 0;
+        color: #2c5364;
+    }
+
+    .tip-details {
+        display: none;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .active .tip-details {
+        display: block;
+    }
+
+    .btn {
+        margin-top: 15px;
+        padding: 8px 15px;
+        border: none;
+        background: #2c5364;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #1e3c4a;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: maroon;
+        color: white;
+        margin-top: 40px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Kuwait Tailor</h1>
+    <p>Professional Stitching Tips & Expert Guidance</p>
+</header>
+
+<div class="container">
+    <div class="tips-grid">
+
+        <div class="tip-card">
+            <h3>Perfect Measurement</h3>
+            <p>Always take accurate body measurements.</p>
+            <div class="tip-details">
+                Use a soft measuring tape and measure chest, waist, hips carefully. Avoid tight or loose measurement mistakes.
+            </div>
+            <button class="btn">Read More</button>
+        </div>
+
+        <div class="tip-card">
+            <h3>Fabric Selection</h3>
+            <p>Choose fabric according to weather.</p>
+            <div class="tip-details">
+                Cotton is best for summer, while wool or blended fabrics are suitable for winter garments.
+            </div>
+            <button class="btn">Read More</button>
+        </div>
+
+        <div class="tip-card">
+            <h3>Thread Quality</h3>
+            <p>Use high-quality threads.</p>
+            <div class="tip-details">
+                Cheap threads break easily and reduce garment life. Always invest in strong thread material.
+            </div>
+            <button class="btn">Read More</button>
+        </div>
+
+        <div class="tip-card">
+            <h3>Cutting Precision</h3>
+            <p>Accurate cutting is key.</p>
+            <div class="tip-details">
+                Always mark fabric before cutting. Use sharp scissors to avoid uneven edges.
+            </div>
+            <button class="btn">Read More</button>
+        </div>
+
+        <div class="tip-card">
+            <h3>Ironing Finish</h3>
+            <p>Press clothes for a professional look.</p>
+            <div class="tip-details">
+                Ironing after stitching gives a neat and polished appearance to garments.
+            </div>
+            <button class="btn">Read More</button>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    © 2024 Kuwait Tailor | Designed with Style
+</footer>
+
+<script>
+    const buttons = document.querySelectorAll(".btn");
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const card = btn.parentElement;
+            card.classList.toggle("active");
+
+            if (btn.innerText === "Read More") {
+                btn.innerText = "Show Less";
+            } else {
+                btn.innerText = "Read More";
+            }
+        });
+    });
+</script>
+<a href="tailor.html"><button>Tailors</button></a>
+</body>
+</html>

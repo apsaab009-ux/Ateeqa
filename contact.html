@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - Kuwait Tailor</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: rgb(238, 110, 110);
+}
+
+.contact {
+  padding: 40px;
+  text-align: center;
+  color:maroon;
+
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+color:maroon;
+}
+
+.contact-info {
+  max-width: 300px;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-color: maroon;
+  border-radius: 20px;
+}
+
+button {
+  padding: 10px;
+  background: maroon;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #34495e;
+}
+  </style>
+</head>
+<body>
+
+  <section class="contact">
+    <h1>Contact Kuwait Tailor</h1>
+
+    <div class="contact-container">
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p><strong>Address:</strong> Main Bazaar, SANGLA HILL</p>
+        <p><strong>Phone:</strong> +92 3037710409</p>
+        <p><strong>Email:</strong> info@kuwaittailor.com</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject">
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+<a href="https://wa.me/923291120009" target="_blank">
+  Chat on WhatsApp
+</a><br><br>
+<a href="tailor.html">Go to main page</a>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  if (name === "" || email === "" || message === "") {
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  alert("Message sent successfully!");
+
+  // Clear form
+  this.reset();
+});
+  </script>
+</body>
+</html>
